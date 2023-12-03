@@ -1,7 +1,7 @@
 {
   "name": "nuxt-app",
-  "private": true,
   "type": "module",
+  "private": true,
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -9,8 +9,17 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
+  "dependencies": {
+    "@googlemaps/js-api-loader": "^1.16.2"
+  },
   "devDependencies": {
+    "@antfu/eslint-config": "^1.1.4",
+    "@nuxt/content": "latest",
     "@nuxt/devtools": "latest",
+    "@pinia/nuxt": "latest",
+    "@types/google.maps": "^3.54.8",
+    "@vueuse/nuxt": "latest",
+    "eslint": "^8.53.0",
     "nuxt": "^3.8.1",
     "vue": "^3.3.8",
     "vue-router": "^4.2.5"

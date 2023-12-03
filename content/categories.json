@@ -1,0 +1,37 @@
+[
+  {
+    "label": "runderen",
+    "singular": "rund",
+    "key": "cow"
+  },
+  {
+    "label": "varkens",
+    "singular": "varken",
+    "key": "pigs"
+  },
+  {
+    "label": "vleeskuikens",
+    "singular": "vleeskuiken",
+    "key": "chickens-meat"
+  },
+  {
+    "label": "leghennen",
+    "singular": "leghen",
+    "key": "chickens-egg"
+  },
+  {
+    "label": "nertsen",
+    "singular": "nerts",
+    "key": "mink"
+  },
+  {
+    "label": "konijnen",
+    "singular": "konijn",
+    "key": "rabbit"
+  },
+  {
+    "label": "slachterijen",
+    "singular": "slachterij",
+    "key": "slaughterhouse"
+  }
+]
