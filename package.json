@@ -20,7 +20,7 @@
     "@types/google.maps": "^3.54.8",
     "@vueuse/nuxt": "latest",
     "eslint": "^8.53.0",
-    "nuxt": "^3.8.1",
+    "nuxt": "^3.9.0",
     "vue": "^3.3.8",
     "vue-router": "^4.2.5"
   }
