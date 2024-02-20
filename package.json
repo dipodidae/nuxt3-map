@@ -7,21 +7,26 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@googlemaps/js-api-loader": "^1.16.2"
+    "fuse.js": "^7.0.0",
+    "nuxt": "^3.10.2",
+    "vue": "^3.4.19",
+    "vue-router": "^4.2.5",
+    "vue3-google-map": "^0.19.0"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^1.1.4",
-    "@nuxt/content": "latest",
-    "@nuxt/devtools": "latest",
-    "@pinia/nuxt": "latest",
-    "@types/google.maps": "^3.54.8",
-    "@vueuse/nuxt": "latest",
-    "eslint": "^8.53.0",
-    "nuxt": "^3.9.0",
-    "vue": "^3.3.8",
-    "vue-router": "^4.2.5"
+    "@antfu/eslint-config": "^2.6.4",
+    "@nuxt/image": "^1.3.0",
+    "@nuxt/ui": "^2.13.0",
+    "@pinia/nuxt": "^0.5.1",
+    "@types/google.maps": "^3.55.3",
+    "@vueuse/nuxt": "^10.7.2",
+    "eslint": "^8.56.0",
+    "nuxt-api-party": "^1.0.1",
+    "typescript": "^5.3.3"
   }
 }

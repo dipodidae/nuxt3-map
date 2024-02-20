@@ -1,21 +1,45 @@
-export const useLocationsStore = defineStore('locations', () => {
-  const locations = ref<WordpressLocation[]>([])
+import categoryData from '@/data/categories.json'
 
-  function getLocations(): Promise<WordpressLocation[]> {
-    return $fetch<WordpressLocation[]>('https://rest.ongehoord.info/wp-json/wp/v2/locations', {
-      method: 'GET',
-      params: {
+export const useLocationStore = defineStore('location', () => {
+  const categories = reactive<LocationCategory[]>(categoryData)
+
+  const categoryUnknown: LocationCategory = categoryData.find(category => category.key === 'unknown')!
+
+  function getCategories(location: WordpressLocation): LocationCategory[] {
+    if (!location.meta?.categories)
+      return [categoryUnknown]
+
+    return location.meta.categories.map(category => getCategory(category))
+  }
+
+  function getCategory(key: string): LocationCategory {
+    return categories.find(category => category.key === key) ?? categoryUnknown
+  }
+
+  function parseLocations(locations: WordpressLocation[]) {
+    return locations.map(parseLocation)
+  }
+
+  function parseLocation(location: WordpressLocation) {
+    return {
+      ...location,
+      categories: getCategories(location),
+      position: {
+        lat: Number.parseFloat(location.meta['location-lat']),
+        lng: Number.parseFloat(location.meta['location-lon']),
+      },
+    }
+  }
+
+  const locations = asyncComputed<WordpressLocation[]>(async () => {
+    const { data } = await useWordpressContentData<WordpressLocation[]>('locations', {
+      query: {
         per_page: 100,
       },
-      parseResponse: JSON.parse,
     })
-  }
 
-  async function fetch() {
-    const { data } = await useAsyncData('item', getLocations)
+    return parseLocations(data.value!)
+  }, [])
 
-    locations.value = data.value
-  }
-
-  return { locations, fetch }
+  return { locations, categories }
 })

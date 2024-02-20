@@ -1,11 +1,18 @@
+// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
 
-  runtimeConfig: {
-    public: {
-      keyGoogleMaps: '',
+  modules: ['@vueuse/nuxt', '@nuxt/ui', 'nuxt-api-party', '@pinia/nuxt', "@nuxt/image"],
+
+  apiParty: {
+    endpoints: {
+      wordpressContent: {
+        url: 'https://rest.ongehoord.info/wp-json/wp/v2',
+      },
     },
   },
 
-  modules: ['@pinia/nuxt', '@vueuse/nuxt', "@nuxt/content"],
+  build: {
+    transpile: ['@fawmi/vue-google-maps'],
+  },
 })

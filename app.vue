@@ -1,3 +1,5 @@
 <template>
-  <NuxtPage />
+  <div>
+    <OngehoordMapContainer />
+  </div>
 </template>

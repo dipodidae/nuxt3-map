@@ -33,5 +33,15 @@
     "label": "slachterijen",
     "singular": "slachterij",
     "key": "slaughterhouse"
+  },
+  {
+    "label": "verzamelplaatsen",
+    "singular": "verzamelplaats",
+    "key": "gathering-places"
+  },
+  {
+    "label": "categorie onbekend",
+    "singular": "categorie onbekend",
+    "key": "unknown"
   }
 ]
