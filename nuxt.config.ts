@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
 
-  modules: ['@vueuse/nuxt', '@nuxt/ui', 'nuxt-api-party', '@pinia/nuxt', "@nuxt/image"],
+  modules: ['@vueuse/nuxt', '@nuxt/ui', 'nuxt-api-party', '@pinia/nuxt', '@nuxt/image'],
 
   apiParty: {
     endpoints: {
