@@ -57,6 +57,10 @@ const [useProvideMapStore, useMapStore] = createInjectionState(() => {
     })
   })
 
+  const queryNoResults = computed((): boolean => {
+    return Boolean(query.value && !queriedLocations.value.some(location => location.visible))
+  })
+
   function getLocationsByCategory(locations: Ref<WordpressLocation[]>, category: LocationCategory): WordpressLocation[] {
     return locations.value.filter((location: WordpressLocation) => {
       if (!location.categories)
@@ -91,7 +95,7 @@ const [useProvideMapStore, useMapStore] = createInjectionState(() => {
     activeLocation.value = activeLocation.value?.id === location.id ? null : location
   }
 
-  return { query, locations, categories, mergedCategories, toggleLocation, activeLocation, queriedLocations, zoom }
+  return { query, locations, categories, mergedCategories, toggleLocation, activeLocation, queriedLocations, zoom, queryNoResults }
 })
 
 export { useProvideMapStore, useMapStore }
