@@ -15,6 +15,6 @@ useProvideMapStore()
   height: 100dvh;
   background: brown;
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: minmax(50ch, 1fr) 3fr;
 }
 </style>

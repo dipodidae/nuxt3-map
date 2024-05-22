@@ -16,7 +16,7 @@ const metaProperties = [
 </script>
 
 <template>
-  <div class="flex gap-2">
+  <div class="flex gap-2 empty:hidden">
     <OngehoordMapListLocationMetaBadge
       v-for="metaProperty in metaProperties"
       :key="metaProperty.key"

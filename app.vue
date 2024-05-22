@@ -1,5 +1,12 @@
+<script setup lang="ts">
+useHead({
+  title: 'Map Test',
+})
+</script>
+
 <template>
-  <div>
-    <OngehoordMapContainer />
-  </div>
+  <NuxtLoadingIndicator />
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
 </template>

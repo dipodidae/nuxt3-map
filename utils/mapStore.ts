@@ -69,12 +69,7 @@ const [useProvideMapStore, useMapStore] = createInjectionState(() => {
       return location.categories
         .some(locationCategory => locationCategory.key === category.key)
     }).sort((a, b) => {
-      if (a.meta['company-owner'] < b.meta['company-owner'])
-        return -1
-
-      if (a.meta['company-owner'] > b.meta['company-owner'])
-        return 1
-
+      return a.meta['company-owner'] < b.meta['company-owner'] ? -1 : 1
       return 0
     })
   }
@@ -95,7 +90,17 @@ const [useProvideMapStore, useMapStore] = createInjectionState(() => {
     activeLocation.value = activeLocation.value?.id === location.id ? null : location
   }
 
-  return { query, locations, categories, mergedCategories, toggleLocation, activeLocation, queriedLocations, zoom, queryNoResults }
+  return {
+    query,
+    locations,
+    categories,
+    mergedCategories,
+    toggleLocation,
+    activeLocation,
+    queriedLocations,
+    zoom,
+    queryNoResults,
+  }
 })
 
 export { useProvideMapStore, useMapStore }

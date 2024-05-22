@@ -14,7 +14,7 @@ const label = computed<string>(() => {
 </script>
 
 <template>
-  <UBadge v-if="label" :ui="{ rounded: 'rounded-full' }" class="shrink-0 gap-1">
+  <UBadge v-if="label" :ui="{ rounded: 'rounded-full' }" class="shrink-0 gap-1" size="xs">
     <UIcon :name="props.metaProperty.icon" />
     <span>{{ label }}</span>
   </UBadge>
