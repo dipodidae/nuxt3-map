@@ -2,7 +2,29 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
 
-  modules: ['@vueuse/nuxt', '@nuxt/ui', 'nuxt-api-party', '@pinia/nuxt', '@nuxt/image'],
+  modules: [
+    '@vueuse/nuxt',
+    '@nuxt/ui',
+    'nuxt-api-party',
+    '@pinia/nuxt',
+    '@nuxt/image',
+    '@nuxt/eslint',
+    '@nuxt/devtools',
+  ],
+
+  nitro: {
+    esbuild: {
+      options: {
+        target: 'esnext',
+      },
+    },
+  },
+
+  experimental: {
+    payloadExtraction: false,
+    renderJsonPayloads: true,
+    typedPages: true,
+  },
 
   apiParty: {
     endpoints: {
@@ -12,7 +34,13 @@ export default defineNuxtConfig({
     },
   },
 
-  build: {
-    transpile: ['@fawmi/vue-google-maps'],
+  devtools: {
+    enabled: true,
+  },
+
+  eslint: {
+    config: {
+      standalone: false,
+    },
   },
 })
